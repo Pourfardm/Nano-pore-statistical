@@ -1,0 +1,32 @@
+close all;
+clc;
+clear all;
+I1=imread('C:\Users\nemat\Pictures\pics\Shingu01.bmp');
+I2=imread('C:\Users\nemat\Pictures\pics\Shingu02-01-45.bmp');
+I3=imread('C:\Users\nemat\Pictures\pics\Shingu02-04-315.tif');
+% I4=imread('C:\Users\pourfard\Documents\MATLAB\statistical nano code\random.jpg');
+I5=imread('C:\Users\nemat\Pictures\pics\special pics.jpg');
+I1=rgb2gray(I1);
+I2=rgb2gray(I2);
+I3=rgb2gray(I3);
+% I4=rgb2gray(I4);
+I5=rgb2gray(I5);
+subplot(2,3,1);
+imshow(I1);
+% format short eng;
+title('Completely ordered image');
+xlabel(['(a) y variance: ',num2str(var(sum(I1,2)),'%10.5e')]);
+subplot(2,3,2);
+imshow(I2); title('Ordered image with one non-regular area');
+xlabel(['(b) y variance: ',num2str(var(sum(I2,2)),'%10.5e')]);
+subplot(2,3,3);
+imshow(I3); title('Ordered image with three non-regular area');
+xlabel(['(c) y variance: ',num2str(var(sum(I3,2)),'%10.5e')]);
+subplot(2,3,4);
+% imshow(I4); title('Random image');
+% xlabel(['(b) y variance: ',num2str(var(sum(I4,2)),'%10.5e')]);
+subplot(2,3,5);
+imshow(I5); title('Real image with three domain');
+xlabel(['(b) y variance: ',num2str(var(sum(I5,2)),'%10.5e')]);
+
+
